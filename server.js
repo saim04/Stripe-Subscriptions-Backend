@@ -204,7 +204,7 @@ app.post(
           // Update subscription status
           if (invoice.subscription) {
             await updateDoc(doc(db, "subscriptions", uid), {
-              status: "past_due",
+              status: "cancelled",
               customerId: customerId, // Ensure customer ID is stored
               lastFailedPaymentDate: new Date(invoice.created * 1000),
             });
@@ -245,7 +245,7 @@ app.post("/api/stripe/payment-sheet", express.json(), async (req, res) => {
       name: `User-${uid}`,
       metadata: { uid },
       email,
-      test_clock: "clock_1R7mHXJvljWkaejrqzx2Qhpy",
+      test_clock: "clock_1R8C5xJvljWkaejrVUwTOVJ2",
     });
 
     const ephemeralKey = await stripe.ephemeralKeys.create(
