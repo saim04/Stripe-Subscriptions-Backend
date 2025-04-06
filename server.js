@@ -245,7 +245,7 @@ app.post("/api/stripe/payment-sheet", express.json(), async (req, res) => {
       name: `User-${uid}`,
       metadata: { uid },
       email,
-      test_clock: "clock_1RAvL4JvljWkaejrqLo6zVe3",
+      test_clock: "clock_1RB058JvljWkaejruqOcmLeB",
     });
 
     const ephemeralKey = await stripe.ephemeralKeys.create(
